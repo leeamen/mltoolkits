@@ -19,3 +19,18 @@ def Legend(arr):
 def Title(tit):
   title(tit)
 
+def ShowPictures(x):
+  figure()
+  x = x[np.random.permutation(len(x))[0:100]]
+  for i in range(0,100):
+    subplot(10, 10, i+1)
+    axis('off')
+    imshow(x[i].reshape(20,20).T, cmap='gray')
+
+  show()
+
+def ShowPicture(x, i):
+#  show_data = x[np.random.permutation(5000)[0:100],:]
+  axis('off')
+  imshow(x[i].reshape(20,20).T, cmap='gray')
+  show()

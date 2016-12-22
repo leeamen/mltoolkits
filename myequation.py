@@ -24,7 +24,7 @@ def LogisticErrorFunction2F(target_matrix_y, output_matrix_y, weights, lamda):
 
 def RandomSample(size, a, b):
   epsilon_init = 0.12;
-  arr = (b - a) * np.random.random_sample() + a
+  arr = (b - a) * np.random.random_sample(size) + a
   return arr * epsilon_init * 2 - epsilon_init
 
 if __name__ == '__main__':
