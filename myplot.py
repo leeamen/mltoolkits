@@ -34,3 +34,4 @@ def ShowPicture(x, i):
   axis('off')
   imshow(x[i].reshape(20,20).T, cmap='gray')
   show()
+

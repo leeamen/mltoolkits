@@ -27,10 +27,21 @@ def RandomSample(size, a, b):
   arr = (b - a) * np.random.random_sample(size) + a
   return arr * epsilon_init * 2 - epsilon_init
 
+import math
+def GaussFunc(x, dimension, mu, sigma):
+  inv = np.linalg.inv(sigma)
+  e = -0.5 * np.dot(x - mu, inv)
+  e = np.dot(e, (x-mu).T)
+  re = 1./np.sqrt((2.*math.pi)**dimension) * 1./np.sqrt(np.linalg.det(sigma)) * np.exp(e)
+  if x.ndim <= 1:return re
+  else:return np.diag(re)
+
 if __name__ == '__main__':
   print Cosine(np.array([-1,-2]), np.array([1,2]))
   print SigmoidGradient(np.array([-1,-2]))
   print SquareErrorFunction2F(np.array([[0,1], [1,0]]), np.array([[0.5,0.5], [0.5,0.5]]), np.array([1,2,3]), 1)
   print LogisticErrorFunction2F(np.array([[0,1], [1,0]]), np.array([[0.5,0.5], [0.5,0.5]]), np.array([1,2,3]), 1)
   print RandomSample((2,3), 0, 1)
+  print GaussFunc(np.array([0,0]), 2, [0, 0], np.array([[1.,0],[0.,1]]))
+  print GaussFunc(np.array([[0,0.],[1,2.]]), 2, [0, 0], np.array([[1.,0],[0.,1]]))
 
