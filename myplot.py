@@ -25,13 +25,22 @@ def ShowPictures(x):
   for i in range(0,100):
     subplot(10, 10, i+1)
     axis('off')
-    imshow(x[i].reshape(20,20).T, cmap='gray')
+    imshow(x[i].reshape(20,20), cmap='gray')
 
   show()
 
-def ShowPicture(x, i):
+def ShowSomePictures(x, num, size_x, size_y):
+  figure()
+  x = x[np.random.permutation(len(x))[0:num]]
+  for i in range(0,num):
+    subplot(10, 10, i+1)
+    axis('off')
+    imshow(x[i].reshape(size_x,size_y), cmap='gray')
+  show()
+
+def ShowPicture(x, i, size_x, size_y):
 #  show_data = x[np.random.permutation(5000)[0:100],:]
   axis('off')
-  imshow(x[i].reshape(20,20).T, cmap='gray')
+  imshow(x[i].reshape(size_x,size_y), cmap='gray')
   show()
 
