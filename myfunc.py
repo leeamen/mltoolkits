@@ -15,7 +15,7 @@ def VArgmax(x, N):
       y[i] = np.where(x[:,i] == np.max(x[:,i]))[0][0]
   return y
 
-#列的Argmax
+#列的Argmax,所在的列号
 def HArgmax(x, N):                                                                                          
   y = np.zeros(N, dtype = np.int)
   for i in range(0, N):

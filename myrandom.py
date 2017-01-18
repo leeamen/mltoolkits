@@ -27,6 +27,41 @@ def RandomSampleList(x, size):
     re = np.vstack((re, e))
   return re
 
+'''
+可重复抽样，bootstrap抽样
+'''
+import random
+import time
+random.seed(time.time())
+def RepeatRandom(start, end, N):
+  rand_list = []
+  for i in range(0,N):
+    rand_list.append(random.randint(start, end))
+  return rand_list
+'''
+ 返回x和y的抽样,抽样个数同x的长度
+'''
+def GetRepeatSample(x, y):
+  rands = RepeatRandom(0, len(x) - 1, len(x))
+  dimension = 0
+  try:
+    dimension = x.shape[1]
+  except:
+    print 'error,x是一维数组:%s'%x
+    dimension = 1
+  if dimension > 1:
+    rand_x = x[rands[0], :]
+  else:
+    rand_x = x[rands[0]]
+
+  rand_y = [y[rands[0]]]
+  for i in range(1, len(rands)):
+    rand_y.append(y[rands[i]])
+    if dimension > 1:
+      rand_x = np.vstack((rand_x, x[rands[i], :]))
+    else:
+      rand_x = np.append(rand_x, rands[i])
+  return (rand_x, np.array(rand_y, dtype = np.int))
 
 if __name__ == '__main__':
   print Normal(1,10,(2,3))
