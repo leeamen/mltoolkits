@@ -8,11 +8,10 @@ def CrossValidation(train_func, predict_func, x, y, fold):
 
   error_rate = 0.0
   for i in range(0, k):
-    train_x = x[i*n :(i+1)*n, :]
-    test_x = np.vstack((x[0:i*n, :], x[(i+1)*n:, :]))
-    train_y = y[i*n : (i+1)*n]
-    test_y = np.hstack((y[0: i*n], y[(i+1)*n:]))
-
+    test_x = x[i*n :(i+1)*n, :]
+    train_x = np.vstack((x[0:i*n, :], x[(i+1)*n:, :]))
+    test_y = y[i*n : (i+1)*n]
+    train_y = np.hstack((y[0: i*n], y[(i+1)*n:]))
 #    logger.debug('train_x:%s,test_x:%s,train_y:%s,test_y:%s',train_x.shape,test_x.shape,train_y.shape,test_y.shape)
     train_func(train_x, train_y)
     pred = predict_func(test_x)
