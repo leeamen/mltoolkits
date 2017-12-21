@@ -3,7 +3,6 @@
 
 import sys
 import numpy as np
-import mylog
 import logging
 def PCA(dataMat, topNfeat=9999999):
   meanVals = np.mean(dataMat, axis=0)

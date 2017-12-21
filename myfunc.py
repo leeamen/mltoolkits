@@ -30,6 +30,6 @@ def HArgmax(x, N):
 if __name__ == '__main__':
   arr = np.array([[1,2,3],[2,3,2.5]])
   # 110
-  print VArgmax(arr, 3)
+  print(VArgmax(arr, 3))
   # 
-  print HArgmax(arr, 2)
+  print(HArgmax(arr, 2))

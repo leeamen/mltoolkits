@@ -47,7 +47,7 @@ def GetRepeatSample(x, y):
   try:
     dimension = x.shape[1]
   except:
-    print 'error,x是一维数组:%s'%x
+    print('error,x是一维数组:%s'%x)
     dimension = 1
   if dimension > 1:
     rand_x = x[rands[0], :]
@@ -64,12 +64,12 @@ def GetRepeatSample(x, y):
   return (rand_x, np.array(rand_y, dtype = np.int))
 
 if __name__ == '__main__':
-  print Normal(1,10,(2,3))
+  print(Normal(1,10,(2,3)))
   x,y = Normal2D([0, 0], [[1,0],[0,1]], 200)
-  print x
-  print y
-  print RandomIntArrayRepeat(5, 0, 10)
-  print RandomSampleList(np.array([[1,2.],[1,1],[1,4]]), 2)
+  print(x)
+  print(y)
+  print(RandomIntArrayRepeat(5, 0, 10))
+  print(RandomSampleList(np.array([[1,2.],[1,1],[1,4]]), 2))
 
   sys.exit(0)
 

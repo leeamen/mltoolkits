@@ -3,8 +3,8 @@
 import numpy as np
 import os
 import sys
-import myfunc
-import myrandom
+import mltoolkits.myfunc
+import mltoolkits.myrandom
 
 '''
 需要实现train_and_return_model_callback回调函数，

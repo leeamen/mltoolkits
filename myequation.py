@@ -37,11 +37,11 @@ def GaussFunc(x, dimension, mu, sigma):
   else:return np.diag(re)
 
 if __name__ == '__main__':
-  print Cosine(np.array([-1,-2]), np.array([1,2]))
-  print SigmoidGradient(np.array([-1,-2]))
-  print SquareErrorFunction2F(np.array([[0,1], [1,0]]), np.array([[0.5,0.5], [0.5,0.5]]), np.array([1,2,3]), 1)
-  print LogisticErrorFunction2F(np.array([[0,1], [1,0]]), np.array([[0.5,0.5], [0.5,0.5]]), np.array([1,2,3]), 1)
-  print RandomSample((2,3), 0, 1)
-  print GaussFunc(np.array([0,0]), 2, [0, 0], np.array([[1.,0],[0.,1]]))
-  print GaussFunc(np.array([[0,0.],[1,2.]]), 2, [0, 0], np.array([[1.,0],[0.,1]]))
+  print( Cosine(np.array([-1,-2]), np.array([1,2])))
+  print( SigmoidGradient(np.array([-1,-2])))
+  print( SquareErrorFunction2F(np.array([[0,1], [1,0]]), np.array([[0.5,0.5], [0.5,0.5]]), np.array([1,2,3]), 1))
+  print( LogisticErrorFunction2F(np.array([[0,1], [1,0]]), np.array([[0.5,0.5], [0.5,0.5]]), np.array([1,2,3]), 1))
+  print( RandomSample((2,3), 0, 1))
+  print( GaussFunc(np.array([0,0]), 2, [0, 0], np.array([[1.,0],[0.,1]])))
+  print( GaussFunc(np.array([[0,0.],[1,2.]]), 2, [0, 0], np.array([[1.,0],[0.,1]])))
 
