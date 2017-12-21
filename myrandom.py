@@ -23,7 +23,8 @@ def RandomIntArrayRepeat(size, a, b):
 #[array([1, 3]), array([1, 2])]
 def RandomSampleList(x, size):
   re = np.empty((0, x.shape[1]), dtype = x.dtype)
-  for e in random.sample(x, size):
+  for e in random.sample(list(x), size):
+    e = np.array(e)
     re = np.vstack((re, e))
   return re
 
